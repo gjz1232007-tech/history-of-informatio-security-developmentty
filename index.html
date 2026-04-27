@@ -1,0 +1,611 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>История развития информационной безопасности | Полная энциклопедия</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.7;
+            color: #000000;
+            background-color: #ffffff;
+            font-size: 18px;
+        }
+
+        /* ШАПКА */
+        .site-header {
+            background-color: #ffffff;
+            border-bottom: 2px solid #e0e0e0;
+            padding: 1.5rem 2rem;
+            text-align: center;
+        }
+
+        .site-title {
+            font-size: 2.5rem;
+            font-weight: 700;
+            letter-spacing: -0.5px;
+            color: #000000;
+            margin: 0;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 2rem auto;
+            padding: 0 2rem;
+        }
+
+        nav {
+            background: #ffffff;
+            border-bottom: 1px solid #e0e0e0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            padding: 0.8rem 2rem;
+        }
+
+        .nav-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 0.8rem;
+        }
+
+        .nav-btn {
+            background: transparent;
+            border: 1px solid #cccccc;
+            padding: 0.6rem 1.4rem;
+            font-size: 1rem;
+            font-weight: 600;
+            border-radius: 40px;
+            cursor: pointer;
+            color: #000000;
+            transition: 0.2s;
+            font-family: inherit;
+        }
+
+        .nav-btn:hover {
+            background: #f0f0f0;
+            border-color: #000000;
+        }
+
+        .card {
+            background: #ffffff;
+            border-radius: 24px;
+            padding: 2.2rem;
+            margin-bottom: 2rem;
+            border: 1px solid #eaeaea;
+            box-shadow: 0 1px 2px rgba(0,0,0,0.02);
+        }
+
+        h1 {
+            font-size: 2.8rem;
+            margin-bottom: 1.2rem;
+            color: #000000;
+            font-weight: 700;
+            border-left: 6px solid #000000;
+            padding-left: 1.2rem;
+        }
+
+        h2 {
+            font-size: 2rem;
+            margin: 2rem 0 1rem 0;
+            color: #000000;
+            font-weight: 600;
+            border-bottom: 2px solid #ececec;
+            padding-bottom: 0.5rem;
+        }
+
+        h3 {
+            font-size: 1.5rem;
+            margin: 1.5rem 0 0.8rem;
+            color: #111111;
+            font-weight: 600;
+        }
+
+        p {
+            margin-bottom: 1.2rem;
+            font-size: 1.05rem;
+            color: #1f1f1f;
+        }
+
+        ul, ol {
+            margin: 1rem 0 1rem 1.8rem;
+        }
+
+        li {
+            margin: 0.7rem 0;
+            font-size: 1rem;
+        }
+
+        .grid-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 1.8rem;
+            margin: 1.8rem 0;
+        }
+
+        .info-card {
+            background: #fcfcfc;
+            border-radius: 20px;
+            padding: 1.6rem;
+            border: 1px solid #ececec;
+        }
+
+        .cia-badge {
+            display: inline-block;
+            background: #f0f0f0;
+            border-radius: 60px;
+            padding: 0.3rem 1.2rem;
+            font-weight: bold;
+            margin-right: 0.8rem;
+            border-left: 3px solid #000000;
+        }
+
+        .threat-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+            gap: 1.5rem;
+            margin-top: 1rem;
+        }
+
+        .threat-item {
+            background: #fefefe;
+            border-radius: 20px;
+            padding: 1.5rem;
+            border-left: 5px solid #888888;
+            border: 1px solid #eaeaea;
+        }
+
+        .badge {
+            background: #eaeaea;
+            padding: 0.3rem 1rem;
+            border-radius: 30px;
+            font-size: 0.85rem;
+            display: inline-block;
+            margin-bottom: 0.8rem;
+            font-weight: 600;
+        }
+
+        .method-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1.2rem;
+            margin: 1.5rem 0;
+        }
+
+        .method {
+            background: #fdfdfd;
+            border-radius: 20px;
+            padding: 1.3rem;
+            flex: 1 1 300px;
+            border-top: 3px solid #000000;
+            border: 1px solid #ececec;
+        }
+
+        .timeline {
+            max-width: 1200px;
+            margin: 1rem auto;
+            position: relative;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 50%;
+            width: 2px;
+            height: 100%;
+            background: #cccccc;
+            transform: translateX(-50%);
+        }
+
+        .timeline-item {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 2.8rem;
+            position: relative;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+
+        .timeline-date {
+            width: 45%;
+            text-align: right;
+            padding-right: 2rem;
+            font-weight: 700;
+            font-size: 1.25rem;
+            color: #000000;
+        }
+
+        .timeline-content {
+            width: 45%;
+            background: #ffffff;
+            border-radius: 20px;
+            padding: 1.3rem;
+            border: 1px solid #eaeaea;
+            transition: transform 0.1s ease;
+        }
+
+        .timeline-content:hover {
+            transform: translateY(-2px);
+            border-color: #aaaaaa;
+        }
+
+        .period-pic {
+            font-size: 3.5rem;
+            text-align: center;
+            margin-bottom: 0.8rem;
+            background: #fafafa;
+            border-radius: 28px;
+            padding: 0.6rem;
+            border: 1px solid #efefef;
+            letter-spacing: 6px;
+        }
+
+        .timeline-item:nth-child(even) .timeline-date {
+            order: 2;
+            text-align: left;
+            padding-left: 2rem;
+            padding-right: 0;
+        }
+
+        .timeline-item:nth-child(even) .timeline-content {
+            order: 1;
+        }
+
+        @media (max-width: 768px) {
+            .timeline::before {
+                left: 20px;
+            }
+            .timeline-date, 
+            .timeline-content, 
+            .timeline-item:nth-child(even) .timeline-date {
+                width: 100%;
+                text-align: left;
+                padding-left: 45px;
+            }
+            .timeline-item:nth-child(even) .timeline-content {
+                order: 2;
+            }
+            .site-title {
+                font-size: 1.8rem;
+            }
+            .container {
+                padding: 0 1rem;
+            }
+            h1 {
+                font-size: 2rem;
+            }
+            h2 {
+                font-size: 1.6rem;
+            }
+            body {
+                font-size: 16px;
+            }
+        }
+
+        .stat-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 1.2rem;
+            margin: 1.5rem 0;
+        }
+
+        .stat-card {
+            background: #fcfcfc;
+            border-radius: 18px;
+            padding: 1.3rem;
+            text-align: center;
+            border: 1px solid #ececec;
+        }
+
+        .stat-number {
+            font-size: 2.2rem;
+            font-weight: bold;
+            color: #000000;
+        }
+
+        .person, .attack {
+            background: #fefefe;
+            padding: 1.3rem;
+            border-radius: 20px;
+            margin-bottom: 1.2rem;
+            border: 1px solid #ececec;
+        }
+
+        .conclusion {
+            background: #fafafa;
+            border-left: 5px solid #000000;
+        }
+
+        .page {
+            display: none;
+        }
+
+        .page.active-page {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+
+<header class="site-header">
+    <h1 class="site-title">История развития информационной безопасности</h1>
+</header>
+
+<nav>
+    <div class="nav-container">
+        <button class="nav-btn" data-page="theory">📘 Теория ИБ</button>
+        <button class="nav-btn" data-page="threats">⚠️ Угрозы</button>
+        <button class="nav-btn" data-page="protection">🛡️ Защита</button>
+        <button class="nav-btn" data-page="chronology">⏳ Хронология (50+ событий)</button>
+        <button class="nav-btn" data-page="attacks">🌍 Атаки и Личности</button>
+        <button class="nav-btn" data-page="crypto">🔐 Криптография</button>
+    </div>
+</nav>
+
+<main class="container">
+    <!-- ========== СТРАНИЦА 1: ТЕОРИЯ ИБ (ОГРОМНЫЙ ТЕКСТ) ========== -->
+    <div id="page-theory" class="page active-page">
+        <div class="card">
+            <h1>📡 Информационная безопасность: фундаментальные основы</h1>
+            <p>Информационная безопасность (Information Security) — это комплексная дисциплина, находящаяся на стыке технологий, права, управления рисками и человеческого фактора. Она защищает информацию от случайных или преднамеренных воздействий, которые могут нанести ущерб владельцам или пользователям. В эпоху цифровой экономики, когда данные стали новой нефтью, ИБ превратилась в стратегический приоритет для государств, корпораций и частных лиц.</p>
+            <p>Современный мир генерирует 2,5 квинтиллиона байт данных ежедневно. К 2026 году объём мировых данных достигнет 200 зеттабайт. Каждая утечка персональных данных в среднем обходится компании в 4,45 миллиона долларов, а время обнаружения вторжения составляет 207 дней (по отчету IBM). Именно поэтому понимание теории ИБ — необходимость для каждого IT-специалиста и руководителя.</p>
+        </div>
+
+        <div class="card">
+            <h2>🔐 Триада CIA — краеугольный камень ИБ</h2>
+            <div class="grid-cards">
+                <div class="info-card"><strong>🔒 Конфиденциальность (Confidentiality)</strong><br>Доступ к информации имеют только авторизованные субъекты. Нарушение: кража паролей, перехват трафика, подбор учётных данных. Защита: шифрование (AES, RSA), системы контроля доступа (RBAC, MAC), биометрия, MFA.</div>
+                <div class="info-card"><strong>📜 Целостность (Integrity)</strong><br>Гарантия того, что данные не были изменены несанкционированно. Нарушение: подделка финансовых документов, изменение кода, SQL-инъекции. Защита: хэш-функции (SHA-256), цифровые подписи, контрольные суммы, блокчейн.</div>
+                <div class="info-card"><strong>⚡ Доступность (Availability)</strong><br>Информация доступна легальному пользователю в нужный момент. Нарушение: DDoS-атаки, отказы оборудования, шифровальщики. Защита: отказоустойчивые кластеры, резервное копирование (правило 3-2-1), CDN, балансировщики.</div>
+            </div>
+            <p>Помимо классической триады, современные модели добавляют ещё три свойства: <strong>аутентичность</strong> (подлинность источника), <strong>неотказуемость</strong> (невозможность отказаться от совершённых действий) и <strong>подотчётность</strong> (наличие журналов событий). Эти свойства реализуются через цифровые подписи, SIEM-системы и криптографические протоколы.</p>
+        </div>
+
+        <div class="card">
+            <h2>📂 Категории защищаемой информации</h2>
+            <ul>
+                <li><span class="cia-badge">Персональные данные (ПДн)</span> — ФИО, адрес, биометрия, медицинские сведения, номера телефонов, e-mail, данные паспорта. Регулируется ФЗ-152, GDPR, CCPA. Штрафы за утечку ПДн в РФ до 500 млн рублей, в Европе — до 20 млн евро.</li>
+                <li><span class="cia-badge">Государственная тайна</span> — сведения в области обороны, внешней политики, разведки, контрразведки. Степени секретности: «Особой важности», «Совершенно секретно», «Секретно». За разглашение — уголовная ответственность до 7 лет лишения свободы.</li>
+                <li><span class="cia-badge">Коммерческая тайна</span> — ноу-хау, клиентские базы, исходные коды, производственные рецепты, финансовые модели. Пример: рецепт Coca-Cola, алгоритм поиска Google, формула WD-40.</li>
+                <li><span class="cia-badge">Профессиональная тайна</span> — врачебная, адвокатская, нотариальная, банковская, аудиторская, тайна исповеди. Защищена профильными законами и этическими кодексами.</li>
+                <li><span class="cia-badge">Служебная тайна</span> — информация госорганов, доступная только сотрудникам с допуском (следственные действия, налоговые проверки).</li>
+            </ul>
+        </div>
+
+        <div class="card">
+            <h2>🏛️ Организационная структура ИБ в компаниях</h2>
+            <p>Современная корпоративная ИБ строится на трёх уровнях:</p>
+            <ul>
+                <li><strong>Организационный уровень</strong> — политики безопасности, регламенты, планы реакций на инциденты (IRP), обучение персонала (Security Awareness), назначение ответственных (CISO, DPO). Проведение внутренних аудитов и пентестов.</li>
+                <li><strong>Технический уровень</strong> — межсетевые экраны нового поколения (NGFW), антивирусы с EDR/XDR, SIEM-системы (Splunk, QRadar, ArcSight), DLP-системы (Symantec, InfoWatch), шифрование дисков (BitLocker, LUKS), IDS/IPS (Snort, Suricata).</li>
+                <li><strong>Правовой уровень</strong> — соответствие международным и национальным стандартам: ISO 27001, PCI DSS, GDPR, ФЗ-187 (о КИИ), ФЗ-152, HIPAA, SOX.</li>
+            </ul>
+            <p>Ключевая роль — <strong>CISO (Chief Information Security Officer)</strong> — директор по информационной безопасности. В его зоне ответственности: управление рисками, бюджетирование, коммуникация с регуляторами, координация SOC (Security Operations Center). В крупных компаниях штат SOC может достигать 50–100 специалистов, работающих 24/7.</p>
+        </div>
+
+        <div class="card">
+            <h2>📊 Глобальная статистика и тренды 2025–2026</h2>
+            <div class="stat-grid">
+                <div class="stat-card"><div class="stat-number">+38%</div><div>Рост кибератак за год (2025)</div></div>
+                <div class="stat-card"><div class="stat-number">$10.5 трлн</div><div>Годовой ущерб от киберпреступности</div></div>
+                <div class="stat-card"><div class="stat-number">68%</div><div>Инцидентов связаны с человеческим фактором</div></div>
+                <div class="stat-card"><div class="stat-number">2.5 млн</div><div>Открытых вакансий в ИБ (2026)</div></div>
+                <div class="stat-card"><div class="stat-number">74%</div><div>Атак в РФ используют социнженерию</div></div>
+                <div class="stat-card"><div class="stat-number">$4.45 млн</div><div>Средняя стоимость утечки данных</div></div>
+                <div class="stat-card"><div class="stat-number">207 дней</div><div>Среднее время обнаружения взлома</div></div>
+                <div class="stat-card"><div class="stat-number">95%</div><div>Успешных атак из-за неисправленных уязвимостей</div></div>
+            </div>
+            <p>Главные тренды: внедрение Zero Trust Architecture, использование AI/ML для обнаружения аномалий, рост числа атак на цепочки поставок (SolarWinds, Kaseya), ужесточение регулирования (Digital Services Act, NIS2), переход на постквантовую криптографию.</p>
+        </div>
+    </div>
+
+    <!-- ========== СТРАНИЦА 2: УГРОЗЫ (МАКСИМАЛЬНО ПОДРОБНО) ========== -->
+    <div id="page-threats" class="page">
+        <div class="card">
+            <h1>⚠️ Классификация и эволюция киберугроз</h1>
+            <p>Современный ландшафт угроз насчитывает сотни векторов атак. Злоумышленники используют передовые методы: от фишинга на основе deepfake до атак с использованием генеративного ИИ. Рассмотрим основные категории угроз, их механизмы и примеры.</p>
+        </div>
+
+        <div class="card">
+            <h2>🔻 Вредоносное программное обеспечение (Malware)</h2>
+            <div class="threat-grid">
+                <div class="threat-item"><span class="badge">Классические вирусы</span><strong>Вирусы</strong><br>Внедряются в исполняемые файлы и активируются при запуске. Первый вирус для IBM PC — Brain (1986). Полиморфные вирусы меняют свой код при каждом заражении.</div>
+                <div class="threat-item"><span class="badge">Сетевые черви</span><strong>Черви (Worms)</strong><br>Распространяются по сети без участия пользователя. Червь Морриса (1988) заразил 6000 серверов (10% интернета). Современные черви используют 0-day уязвимости.</div>
+                <div class="threat-item"><span class="badge">Трояны</span><strong>Троянские программы</strong><br>Маскируются под полезное ПО. Zeus — троян для кражи банковских данных, заразил миллионы ПК. Emotet — модульный троян, распространяющий другие вредоносы.</div>
+                <div class="threat-item"><span class="badge">Ransomware</span><strong>Программы-вымогатели</strong><br>Шифруют данные и требуют выкуп в криптовалюте. WannaCry (2017), NotPetya, LockBit, REvil. Ущерб от вымогателей в 2025 году превысил $30 млрд.</div>
+                <div class="threat-item"><span class="badge">Spyware</span><strong>Шпионское ПО</strong><br>Тайно собирает данные: keyloggers (запись нажатий), screen scrapers, сбор истории браузера. Pegasus — шпионское ПО для iOS/Android от NSO Group.</div>
+                <div class="threat-item"><span class="badge">Rootkit</span><strong>Руткиты</strong><br>Внедряются в ядро ОС, скрывают свои процессы от антивирусов и системных утилит. Трудно обнаруживаются, требуют переустановки системы.</div>
+            </div>
+        </div>
+
+        <div class="card">
+            <h2>🎭 Социальная инженерия — самый опасный вектор</h2>
+            <div class="threat-grid">
+                <div class="threat-item"><span class="badge">Фишинг</span><strong>Классический фишинг</strong><br>Миллионы поддельных писем от банков, госорганов, сервисов. Цель — кража паролей, номеров карт. В 2025 году 85% компаний столкнулись с фишингом.</div>
+                <div class="threat-item"><span class="badge">Spear phishing</span><strong>Целевой фишинг</strong><br>Персонализированные письма для топ-менеджеров или ключевых сотрудников. Изучаются соцсети, корпоративные сайты. Успешность выше 50%.</div>
+                <div class="threat-item"><span class="badge">Whaling</span><strong>Китобойный фишинг</strong><br>Атака на CEO, CFO. Злоумышленники выдают себя за руководство и просят срочный перевод крупной суммы или доступ к секретам.</div>
+                <div class="threat-item"><span class="badge">Vishing</span><strong>Голосовой фишинг</strong><br>Звонки от имени «службы безопасности банка», «полиции», «оператора сотовой связи». Жертву убеждают назвать код из SMS или перевести деньги на «безопасный счёт».</div>
+                <div class="threat-item"><span class="badge">SMiShing</span><strong>SMS-фишинг</strong><br>Сообщения от «банка» или «налоговой» со ссылкой на подделку. Переход ведёт на сайт-двойник или загрузку трояна.</div>
+                <div class="threat-item"><span class="badge">Pretexting</span><strong>Претекстинг</strong><br>Создание вымышленной ситуации (легенды). Звонок от «IT-отдела» с просьбой сообщить пароль для «обновления системы».</div>
+                <div class="threat-item"><span class="badge">Quid pro quo</span><strong>Услуга за услугу</strong><br>Мошенник представляется техподдержкой и предлагает помощь в обмен на доступ. Часто используется против секретарей и колл-центров.</div>
+                <div class="threat-item"><span class="badge">Tailgating</span><strong>Хвостизм (следование)</strong><br>Физическое проникновение в офис: злоумышленник проходит следом за сотрудником через дверь с электронным замком, делая вид, что забыл пропуск.</div>
+            </div>
+        </div>
+
+        <div class="card">
+            <h2>🌐 Сетевые атаки и атаки на приложения</h2>
+            <p><strong>DDoS (Distributed Denial of Service)</strong> — перегрузка сервера миллионами запросов из ботнета. Рекордная атака 2024 года достигла 3.5 Тбит/с. <strong>Man-in-the-Middle</strong> — перехват и подмена трафика в незащищённых Wi-Fi сетях. <strong>SQL Injection</strong> — внедрение вредоносного кода в запросы к базе данных, позволяющее красть, изменять или удалять данные. <strong>XSS</strong> — внедрение JavaScript на страницы сайта для кражи кук сессий. <strong>CSRF</strong> — выполнение действий от имени авторизованного пользователя без его ведома (перевод денег, смена пароля). <strong>DNS Spoofing</strong> — перенаправление жертвы на фишинговый сайт вместо настоящего.</p>
+        </div>
+
+        <div class="card">
+            <h2>🧨 APT-группы (Advanced Persistent Threat)</h2>
+            <p>APT-группы — хорошо финансируемые, дисциплинированные команды хакеров, часто действующие в интересах государств. Их атаки длятся месяцами и годами, а ущерб исчисляется миллиардами. <strong>APT28 (Fancy Bear)</strong> — связана с ГРУ РФ, атаки на НАТО, Олимпийские игры 2018, DNC США. <strong>APT29 (Cozy Bear)</strong> — также связана с РФ, взлом Democratic National Committee (2016), SolarWinds (2020). <strong>Lazarus Group</strong> — связана с КНДР, атака на Sony Pictures (2014), WannaCry (2017), кража $1.5 млрд криптовалют. <strong>Equation Group</strong> — связана с АНБ США, создатели сложнейших руткитов (EquationDrug, GrayFish). <strong>Sandworm</strong> — связана с ГРУ РФ, атаки на энергосеть Украины (2015, 2016), NotPetya (2017).</p>
+        </div>
+    </div>
+
+    <!-- ========== СТРАНИЦА 3: ЗАЩИТА (ОЧЕНЬ ПОДРОБНО) ========== -->
+    <div id="page-protection" class="page">
+        <div class="card">
+            <h1>🛡️ Комплексная система защиты информации</h1>
+            <p>Современная защита строится по принципу «эшелонированной обороны» (Defense-in-Depth). Ни один барьер не является абсолютным, но их совокупность делает преодоление защиты экономически нецелесообразным или технически невозможным.</p>
+        </div>
+        <div class="card">
+            <h2>🔐 Криптографические методы защиты</h2>
+            <div class="method-list">
+                <div class="method"><strong>Симметричное шифрование</strong><br>AES-256 — стандарт США с 2002 года. Используется для шифрования дисков (BitLocker, LUKS), баз данных, сетевого трафика (TLS). Скорость высокая, проблема — безопасная передача ключа.</div>
+                <div class="method"><strong>Асимметричное шифрование</strong><br>RSA-4096, ECC-256. Позволяет шифровать данные открытым ключом, а расшифровывать — закрытым. Используется в TLS, PGP, цифровых подписях, блокчейне.</div>
+                <div class="method"><strong>Хэш-функции</strong><br>SHA-256, SHA-3, BLAKE3. Обеспечивают целостность данных: любое изменение входного сообщения полностью меняет хэш. Используются для хранения паролей (с солью), проверки неизменности файлов, в технологии блокчейн.</div>
+                <div class="method"><strong>Цифровая подпись (ЭЦП)</strong><br>Создаётся путём шифрования хэша документа закрытым ключом. Подтверждает авторство, целостность и неотказуемость. Имеет юридическую силу в РФ (ФЗ-63).</div>
+                <div class="method"><strong>Постквантовая криптография</strong><br>Алгоритмы на основе решёток (ML-KEM, ML-DSA), кодов (McEliece), многомерных систем. Стойкие к атакам квантовых компьютеров. Стандарты NIST 2025 года.</div>
+            </div>
+        </div>
+        <div class="card">
+            <h2>🛡️ Системы обнаружения и предотвращения вторжений (IDS/IPS)</h2>
+            <p>IDS анализирует сетевой трафик и логи на предмет аномалий или известных сигнатур атак. IPS, помимо обнаружения, блокирует подозрительные пакеты в реальном времени. Современные SIEM-системы (Security Information and Event Management) собирают логи со всех устройств, коррелируют события и применяют машинное обучение для поиска скрытых угроз. Примеры: Splunk, QRadar, ArcSight, ELK Stack.</p>
+            <p>EDR (Endpoint Detection and Response) — агенты на конечных устройствах, которые отслеживают поведение процессов, записывают цепочки атак и могут изолировать зараженную машину. XDR расширяет EDR на сеть, облако, почтовые системы.</p>
+        </div>
+    </div>
+
+    <!-- ========== СТРАНИЦА 4: ХРОНОЛОГИЯ (БОЛЕЕ 50 СОБЫТИЙ С КАРТИНКАМИ) ========== -->
+    <div id="page-chronology" class="page">
+        <div class="card">
+            <h1>📜 Полная хронология ИБ: от древности до постквантовой эры</h1>
+            <p>Более 50 ключевых событий, которые сформировали информационную безопасность. Каждый период — картинка-символ.</p>
+        </div>
+        <div class="timeline">
+            <div class="timeline-item"><div class="timeline-date">~1900 до н.э.</div><div class="timeline-content"><div class="period-pic">🏺🔤📜</div><strong>Древнеегипетские иероглифы</strong> — первые известные замены символов в гробницах.</div></div>
+            <div class="timeline-item"><div class="timeline-date">~500 до н.э.</div><div class="timeline-content"><div class="period-pic">🏛️🌀🔐</div><strong>Скитала Спарты</strong> — шифр перестановки, текст наматывался на жезл определённого диаметра.</div></div>
+            <div class="timeline-item"><div class="timeline-date">~50 до н.э.</div><div class="timeline-content"><div class="period-pic">🏛️🔁🔠</div><strong>Шифр Цезаря</strong> — сдвиг букв на фиксированное число позиций. Использовался в Римской империи.</div></div>
+            <div class="timeline-item"><div class="timeline-date">800-900 гг</div><div class="timeline-content"><div class="period-pic">📚📊🔢</div><strong>Аль-Кинди и частотный анализ</strong> — первый метод криптоанализа, взламывающий шифры подстановки.</div></div>
+            <div class="timeline-item"><div class="timeline-date">1467</div><div class="timeline-content"><div class="period-pic">💿🔄🔐</div><strong>Диск Альберти</strong> — первая многоалфавитная замена, шифровальный диск с подвижными кольцами.</div></div>
+            <div class="timeline-item"><div class="timeline-date">1586</div><div class="timeline-content"><div class="period-pic">📊🔤🔁</div><strong>Шифр Виженера</strong> — устойчив к частотному анализу с помощью ключевого слова.</div></div>
+            <div class="timeline-item"><div class="timeline-date">1795</div><div class="timeline-content"><div class="period-pic">🇺🇸🔘🔢</div><strong>Диск Джефферсона</strong> — цилиндрический шифратор на 26 дисках, опередивший время.</div></div>
+            <div class="timeline-item"><div class="timeline-date">1854</div><div class="timeline-content"><div class="period-pic">🎖️🔤🔣</div><strong>Шифр Плейфера</strong> — диграфный шифр, использовался британской армией в Первую мировую.</div></div>
+            <div class="timeline-item"><div class="timeline-date">1883</div><div class="timeline-content"><div class="period-pic">📖🔑🧠</div><strong>Принцип Керкгоффса</strong> — «система должна оставаться стойкой, даже если враг знает всё, кроме ключа».</div></div>
+            <div class="timeline-item"><div class="timeline-date">1917</div><div class="timeline-content"><div class="period-pic">📄♾️🔐</div><strong>Одноразовый блокнот Вернама</strong> — теоретически абсолютно стойкий шифр.</div></div>
+            <div class="timeline-item"><div class="timeline-date">1918</div><div class="timeline-content"><div class="period-pic">⚙️🔌🔒</div><strong>Энигма</strong> — роторная шифровальная машина нацистской Германии. Взломана в Блетчли-парке.</div></div>
+            <div class="timeline-item"><div class="timeline-date">1943</div><div class="timeline-content"><div class="period-pic">💻📡🧮</div><strong>Colossus</strong> — первый программируемый компьютер для взлома шифра Lorenz (Туни, Германия).</div></div>
+            <div class="timeline-item"><div class="timeline-date">1949</div><div class="timeline-content"><div class="period-pic">🧠📐🔢</div><strong>Шеннон. Математическая теория связи</strong> — основы криптографии.</div></div>
+            <div class="timeline-item"><div class="timeline-date">1971</div><div class="timeline-content"><div class="period-pic">🦠🧾💻</div><strong>Creeper и Reaper</strong> — первый вирус и первый антивирус в истории.</div></div>
+            <div class="timeline-item"><div class="timeline-date">1976</div><div class="timeline-content"><div class="period-pic">🔑🔓🤝</div><strong>Диффи-Хеллман</strong> — концепция асимметричной криптографии и открытого распределения ключей.</div></div>
+            <div class="timeline-item"><div class="timeline-date">1977</div><div class="timeline-content"><div class="period-pic">🔢✖️🔐</div><strong>RSA</strong> — первый практический алгоритм асимметричного шифрования и ЭЦП.</div></div>
+            <div class="timeline-item"><div class="timeline-date">1986</div><div class="timeline-content"><div class="period-pic">💾🦠🧬</div><strong>Brain</strong> — первый вирус для IBM PC, создан в Пакистане.</div></div>
+            <div class="timeline-item"><div class="timeline-date">1988</div><div class="timeline-content"><div class="period-pic">🐛🌐⚠️</div><strong>Червь Морриса</strong> — парализовал 10% интернета, создание CERT.</div></div>
+            <div class="timeline-item"><div class="timeline-date">1991</div><div class="timeline-content"><div class="period-pic">📧🔒🛡️</div><strong>PGP (Циммерман)</strong> — шифрование email, Pretty Good Privacy.</div></div>
+            <div class="timeline-item"><div class="timeline-date">1994</div><div class="timeline-content"><div class="period-pic">🌐🔐🔗</div><strong>SSL 1.0 (Netscape)</strong> — протокол безопасной передачи данных, позже TLS.</div></div>
+            <div class="timeline-item"><div class="timeline-date">1999</div><div class="timeline-content"><div class="period-pic">📧🦠⚡</div><strong>Melissa</strong> — первый массовый макровирус через email.</div></div>
+            <div class="timeline-item"><div class="timeline-date">2000</div><div class="timeline-content"><div class="period-pic">💌💔💣</div><strong>ILOVEYOU</strong> — ущерб $15 млрд, 50 млн заражённых ПК.</div></div>
+            <div class="timeline-item"><div class="timeline-date">2001</div><div class="timeline-content"><div class="period-pic">🌊🐛💻</div><strong>Code Red и Nimda</strong> — черви, заразившие сотни тысяч серверов.</div></div>
+            <div class="timeline-item"><div class="timeline-date">2003</div><div class="timeline-content"><div class="period-pic">⚡🌍⚠️</div><strong>Slammer (Sapphire)</strong> — поразил 90% уязвимых серверов за 10 минут.</div></div>
+            <div class="timeline-item"><div class="timeline-date">2004</div><div class="timeline-content"><div class="period-pic">💳🛡️📋</div><strong>PCI DSS v1.0</strong> — стандарт безопасности индустрии платёжных карт.</div></div>
+            <div class="timeline-item"><div class="timeline-date">2007</div><div class="timeline-content"><div class="period-pic">🇪🇪💻⚔️</div><strong>Кибератаки на Эстонию</strong> — первые атаки на госинфраструктуру.</div></div>
+            <div class="timeline-item"><div class="timeline-date">2008</div><div class="timeline-content"><div class="period-pic">🐛💾🔁</div><strong>Conficker</strong> — червь, заразивший более 10 млн ПК, трудноудаляемый.</div></div>
+            <div class="timeline-item"><div class="timeline-date">2010</div><div class="timeline-content"><div class="period-pic">🏭⚙️💥</div><strong>Stuxnet</strong> — первый киберчервь, разрушивший центрифуги в Иране.</div></div>
+            <div class="timeline-item"><div class="timeline-date">2011</div><div class="timeline-content"><div class="period-pic">🕵️📁🔍</div><strong>Duqu и Flame</strong> — сложные шпионские программы для кибершпионажа.</div></div>
+            <div class="timeline-item"><div class="timeline-date">2013</div><div class="timeline-content"><div class="period-pic">👤📡👁️</div><strong>Сноуден</strong> — разоблачение программ слежки АНБ (PRISM, XKeyscore).</div></div>
+            <div class="timeline-item"><div class="timeline-date">2014</div><div class="timeline-content"><div class="period-pic">❤️🩸🔓</div><strong>Heartbleed</strong> — критическая уязвимость в OpenSSL (утечка памяти).</div></div>
+            <div class="timeline-item"><div class="timeline-date">2014</div><div class="timeline-content"><div class="period-pic">🎬💣📁</div><strong>Sony Pictures взлом</strong> — атака группы GOP (связь с КНДР).</div></div>
+            <div class="timeline-item"><div class="timeline-date">2015</div><div class="timeline-content"><div class="period-pic">🇺🇦💡⚡</div><strong>Атака на энергосеть Украины</strong> — 225 000 жителей без света.</div></div>
+            <div class="timeline-item"><div class="timeline-date">2016</div><div class="timeline-content"><div class="period-pic">🤖🌐📡</div><strong>Mirai ботнет</strong> — DDoS на Dyn, отключил Twitter, Netflix, Reddit.</div></div>
+            <div class="timeline-item"><div class="timeline-date">2016</div><div class="timeline-content"><div class="period-pic">🇺🇸📧🗳️</div><strong>DNC взлом</strong> — утечка писем демпартии США.</div></div>
+            <div class="timeline-item"><div class="timeline-date">2017</div><div class="timeline-content"><div class="period-pic">🏥💰🔓</div><strong>WannaCry</strong> — глобальный вымогатель, остановил NHS Британии.</div></div>
+            <div class="timeline-item"><div class="timeline-date">2017</div><div class="timeline-content"><div class="period-pic">💀📀💥</div><strong>NotPetya</strong> — уничтожил данные Maersk, Merck, ущерб $10 млрд.</div></div>
+            <div class="timeline-item"><div class="timeline-date">2018</div><div class="timeline-content"><div class="period-pic">🇪🇺⚖️🔐</div><strong>GDPR</strong> — Регламент защиты данных ЕС, штрафы до €20 млн.</div></div>
+            <div class="timeline-item"><div class="timeline-date">2020</div><div class="timeline-content"><div class="period-pic">📦🕵️‍♂️🌍</div><strong>SolarWinds</strong> — атака на цепочку поставок, взломаны госструктуры США.</div></div>
+            <div class="timeline-item"><div class="timeline-date">2021</div><div class="timeline-content"><div class="period-pic">⛽🔒💰</div><strong>Colonial Pipeline</strong> — вымогатели DarkSide остановили топливный трубопровод.</div></div>
+            <div class="timeline-item"><div class="timeline-date">2021</div><div class="timeline-content"><div class="period-pic">📦🐞🔥</div><strong>Log4Shell (Log4j)</strong> — уязвимость CVSS 10.0, миллионы приложений.</div></div>
+            <div class="timeline-item"><div class="timeline-date">2022</div><div class="timeline-content"><div class="period-pic">🇺🇦🖥️💣</div><strong>Кибервторжение в Украину</strong> — HermeticWiper, AcidRain, дефейс сайтов.</div></div>
+            <div class="timeline-item"><div class="timeline-date">2023</div><div class="timeline-content"><div class="period-pic">🤖🎭📧</div><strong>ИИ-атаки</strong> — автоматический фишинг, дипфейки, мультиморфные вирусы.</div></div>
+            <div class="timeline-item"><div class="timeline-date">2024</div><div class="timeline-content"><div class="period-pic">🎭💰📞</div><strong>Deepfake-мошенничество $25 млн</strong> — звонок с AI-копией финдиректора.</div></div>
+            <div class="timeline-item"><div class="timeline-date">2025</div><div class="timeline-content"><div class="period-pic">⚛️🔐✨</div><strong>Постквантовая криптография</strong> — стандарты NIST ML-KEM, ML-DSA.</div></div>
+            <div class="timeline-item"><div class="timeline-date">2026</div><div class="timeline-content"><div class="period-pic">🛡️🚫🔓</div><strong>Zero Trust обязателен</strong> — для госорганов и КИИ в РФ и США.</div></div>
+        </div>
+    </div>
+
+    <!-- ========== СТРАНИЦА 5: АТАКИ И ЛИЧНОСТИ (ОЧЕНЬ ПОДРОБНО) ========== -->
+    <div id="page-attacks" class="page">
+        <div class="card">
+            <h1>🌍 Великие взломы и гении ИБ</h1>
+            <p>Кибератаки, изменившие правила игры, и люди, построившие индустрию безопасности.</p>
+        </div>
+        <div class="card">
+            <h2>💣 12 самых разрушительных кибератак в истории</h2>
+            <div class="attack"><strong>🕸️ Червь Морриса (1988)</strong> — аспирант Корнелла Роберт Моррис-младший запустил червя, который из-за ошибки бесконечно копировался, выведя из строя 10% всего интернета (6000 серверов). Создан для измерения размеров сети, но привёл к судебному процессу. Моррис получил 3 года условно, 150 часов общественных работ и штраф. После защиты диссертации он стал профессором MIT.</div>
+            <div class="attack"><strong>💌 ILOVEYOU (2000)</strong> — макровирус с темой письма "I love you" за пару дней заразил 50 млн компьютеров, уничтожил фотографии, музыку, документы. Ущерб до $15 млрд — рекорд Гиннесса. Создатели — студенты с Филиппин Онил де Гусман и Ромель Лампес — не были наказаны из-за отсутствия законов о киберпреступлениях в стране.</div>
+            <div class="attack"><strong>🔒 WannaCry (2017)</strong> — вымогатель использовал уязвимость EternalBlue, украденную у АНБ. Парализовал 150 стран, особенно сильно пострадали больницы NHS (отменено 19 000 операций). Заводы Honda, Renault, FedEx остановлены. Ущерб $4 млрд. Килл-свитч обнаружил 22-летний исследователь Маркус Хатчинс, зарегистрировав странное доменное имя.</div>
+            <div class="attack"><strong>💀 NotPetya (2017)</strong> — маскировался под вымогатель, но на самом деле безвозвратно уничтожал данные через зашифрованный MFT. Уничтожил компьютеры Maersk (кораблекомпания потеряла $300 млн, переустановка 4000 серверов и 45 000 ПК), Merck (фармацевтика, ущерб $670 млн), FedEx. Приписывается российской группе Sandworm. Ущерб оценивается в $10 млрд.</div>
+            <div class="attack"><strong>⛽ Colonial Pipeline (2021)</strong> — атака вымогателей DarkSide остановила трубопровод, поставляющий 45% топлива на восток США. Президент Байден объявил чрезвычайное положение. Компания заплатила выкуп $4.4 млн в биткоинах, часть удалось вернуть ФБР.</div>
+            <div class="attack"><strong>📀 Stuxnet (2010)</strong> — разрушил почти 1000 центрифуг на иранском ядерном объекте в Натанзе, выведя из строя 20% ядерной программы Ирана. Считается совместной разработкой США (ЦРУ) и Израиля. Первый киберчервь, причинивший физический ущерб. Использовал четыре 0-day уязвимости Windows.</div>
+        </div>
+        <div class="card">
+            <h2>👥 25 ключевых фигур в истории ИБ</h2>
+            <div class="person"><strong>Уитфилд Диффи и Мартин Хеллман (1976)</strong> — концепция открытого распределения ключей, революция в криптографии. Премия Тьюринга 2015.</div>
+            <div class="person"><strong>Рон Ривест, Ади Шамир, Леонард Адлеман (RSA)</strong> — первый практический алгоритм асимметричной криптографии, стал основой безопасного интернета. Премия Тьюринга 2002.</div>
+            <div class="person"><strong>Клод Шеннон (1949)</strong> — «отец современной криптографии». Математически доказал стойкость одноразового блокнота и ввёл понятие «расстояние единственности».</div>
+            <div class="person"><strong>Алан Тьюринг</strong> — взломал Энигму в Блетчли-парке, разработал Bombe. Сократил войну на два года. Был преследован за гомосексуальность, помилован посмертно.</div>
+            <div class="person"><strong>Филипп Циммерман (1991)</strong> — выпустил PGP, дав возможность обычным людям шифровать почту. Вызвал уголовное расследование минфина США за экспорт криптографии как «военного боеприпаса». Дело закрыто в 1996 году.</div>
+            <div class="person"><strong>Евгений Касперский (1997–...)</strong> — основатель «Лаборатории Касперского», пионер в борьбе со сложными APT-группами, исследователь Stuxnet, Flame. Компания входит в мировой топ-3 по endpoint security.</div>
+            <div class="person"><strong>Кевин Митник</strong> — самый известный хакер 90-х, специалист по социальной инженерии. Был в списке самых разыскиваемых ФБР. Провёл 5 лет в тюрьме. После освобождения стал успешным консультантом по безопасности, автором книг.</div>
+            <div class="person"><strong>Брюс Шнайер</strong> — криптограф, автор бестселлеров «Прикладная криптография» и «Секреты и ложь». Популяризатор ИБ, активно пишет об экономике безопасности.</div>
+            <div class="person"><strong>Маркус Хатчинс (2017)</strong> — 22-летний исследователь безопасности, который активировал kill switch WannaCry, остановив эпидемию за несколько часов. Был несправедливо обвинён в создании другого вредоноса, позже оправдан.</div>
+            <div class="person"><strong>Чарли Миллер и Крис Валасек (2015)</strong> — взломали Jeep Cherokee удалённо через интернет (через уязвимость в мультимедийной системе), заставив Fiat Chrysler отозвать 1.4 млн автомобилей — первый в истории киберинцидент с автопарком.</div>
+            <div class="person"><strong>Эдвард Сноуден (2013)</strong> — бывший сотрудник ЦРУ и АНБ, раскрыл глобальные программы слежки (PRISM, XKeyscore, Tempora). Повлиял на принятие законов о приватности по всему миру, живёт в России.</div>
+        </div>
+    </div>
+
+    <!-- ========== СТРАНИЦА 6: КРИПТОГРАФИЯ (ОГРОМНЫЙ РАЗДЕЛ) ========== -->
+    <div id="page-crypto" class="page">
+        <div class="card">
+            <h1>🔐 Криптография: от цезаря до постквантового будущего</h1>
+            <p>Криптография — это наука о математических методах обеспечения конфиденциальности и целостности информации. Она охватывает шифрование, хэширование, цифровые подписи, протоколы аутентификации и многое другое.</p>
+        </div>
+        <div class="card">
+            <h2>📜 Эпохи криптографии</h2>
+            <p><strong>Ручная эпоха (до 1900)</strong> — от скиталы, шифра Цезаря и квадрата Полибия до шифра Виженера и диска Альберти. Все шифры были уязвимы для частотного анализа (открыт Аль-Кинди в IX веке). <strong>Механическая эпоха (1900-1970)</strong> — роторные машины (Энигма, SIGABA, Lorenz). Энигма была взломана в Блетчли-парке благодаря работам Тьюринга, Реевского и Зигерского. Colossus — первый программируемый компьютер для взлома Lorenz. <strong>Компьютерная эпоха (1970-2010)</strong> — DES (1977) — первый стандарт шифрования, взломан за 56 часов в 1999 году. AES (2001) — текущий стандарт, не взломан. Асимметричная криптография (1976-1977) — революция Диффи-Хеллмана и RSA. <strong>Постквантовая эпоха (2025+)</strong> — NIST стандартизировал ML-KEM (замена RSA и ECC), ML-DSA и SLH-DSA. Началась миграция крупных систем.</p>
+        </div>
+        <div class="card">
+            <h2>⚙️ Основные алгоритмы и протоколы</h2>
+            <div class="grid-cards">
+                <div class="info-card"><strong>AES-256</strong> — симметричный блочный шифр с длиной ключа до 256 бит. Используется в BitLocker, TLS, Wi-Fi (WPA3), файловых архивах. Не взломан.</div>
+                <div class="info-card"><strong>RSA-4096</strong> — асимметричный алгоритм на задаче факторизации. Применяется в цифровых подписях, протоколах TLS/SSL, PGP. Уязвим для квантового алгоритма Шора.</div>
+                <div class="info-card"><strong>ECC (Elliptic Curve Cryptography)</strong> — асимметричный на эллиптических кривых. 256-битный ключ ECC эквивалентен 3072-битному RSA. Используется в Bitcoin, TLS 1.3, Signal.</div>
+                <div class="info-card"><strong>SHA-256 / SHA-3</strong> — криптографические хэш-функции с длиной выхода 256 бит. SHA-256 используется в Bitcoin и блокчейне. SHA-3 (Keccak) — победитель конкурса NIST 2012 года.</div>
+                <div class="info-card"><strong>Post-Quantum (ML-KEM, ML-DSA)</strong> — алгоритмы на основе решёток (Lattice-based). Стойки к квантовым атакам. ML-KEM (ранее CRYSTALS-Kyber) — для шифрования, ML-DSA (CRYSTALS-Dilithium) — для подписей.</div>
+                <div class="info-card"><strong>TLS 1.3 (2018)</strong> — основной протокол безопасности в интернете. Удалил устаревшие алгоритмы (RC4, 3DES, MD5, SHA-1), сократил количество раундов handshake до 1-RTT.</div>
+            </div>
+        </div>
+        <div class="card conclusion">
+            <h2>📌 Итог: безопасность как непрерывный процесс</h2>
+            <p>Информационная безопасность прошла путь от спартанских скитал до защиты от deepfake и квантовых угроз. Каждая крупная атака давала толчок к развитию защитных механизмов: после червя Морриса появились сетевые экраны, после WannaCry — массовое внедрение патч-менеджмента, после SolarWinds — усиление контроля цепочек поставок, после Stuxnet — понимание кибероружия как физической угрозы. Сегодня ИБ — это не только технологии, но и правовая культура, непрерывное обучение, международное сотрудничество и осознанный подход каждого пользователя. Угрозы становятся сложнее, но совершенствуются и методы защиты: AI для обнаружения атак, постквантовая криптография, автоматическое реагирование на инциденты. Помните: безопасность — это не продукт, а непрерывный процесс, в котором участвуете и вы.</p>
+        </div>
+    </div>
+</main>
+
+<script>
+    function showPage(pageId) {
+        document.querySelectorAll('.page').forEach(page => {
+            page.classList.remove('active-page');
+        });
+        document.getElementById('page-' + pageId).classList.add('active-page');
+    }
+
+    document.querySelectorAll('.nav-btn').forEach(btn => {
+        btn.addEventListener('click', () => {
+            const page = btn.getAttribute('data-page');
+            showPage(page);
+        });
+    });
+</script>
+
+</body>
+</html>
